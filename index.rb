@@ -8,7 +8,14 @@ Telegram::Bot::Client.run(token) do |bot|
       end
 
     if message.voice
-       bot.api.sendMessage(chat_id: message.chat.id, text: "Voice duration, #{message.voice.duration}")
+
+      id = message.voice.file_id
+      j = bot.api.getFile(file_id: id)
+      path = j["result"]["file_path"]
+      f_url = "https://api.telegram.org/file/bot#{token}/#{path}"
+
+      bot.api.sendMessage(chat_id: message.chat.id, text: "Voice dwlnd link, #{f_url}")
+
     end
 
   end
