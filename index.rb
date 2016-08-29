@@ -63,7 +63,7 @@ Telegram::Bot::Client.run(token) do |bot|
       hash = Hash.from_xml(xml)
 
       if hash['recognitionResults']['variant']
-        if hash['recognitionResults']['variant'][1]
+        if hash['recognitionResults']['variant'].class == Array
           bot.api.sendMessage(chat_id: message.chat.id, text: "#{hash['recognitionResults']['variant'][0]}")
         else
           bot.api.sendMessage(chat_id: message.chat.id, text: "#{hash['recognitionResults']['variant']}")
