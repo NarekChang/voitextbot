@@ -1,6 +1,6 @@
 require 'telegram/bot'
 
-token = 'token'
+token = '257482587:AAHkdako3TGWc1--PKt3evunrjZcz3lIBlw'
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
@@ -17,7 +17,7 @@ Telegram::Bot::Client.run(token) do |bot|
       require 'open-uri'
 
       user_id = '01ae13cb744628b58fb536d496daa2e6'
-      sy_token = 'token'
+      sy_token = '66ce8a9b-9bdd-44c7-b461-6f78c1f88eb2'
       chat_id = message.chat.id
       f_name = "file#{chat_id}"
 
@@ -35,12 +35,9 @@ Telegram::Bot::Client.run(token) do |bot|
 
       @dir = File.expand_path("../", __FILE__)
 
-      @i = 0
       Dir.glob("#{@dir}/*.mp3").each do |ogg|
         mp3 = ogg
-        puts mp3
         system "ffmpeg -i \"#{ogg}\" -acodec libmp3lame \"#{mp3}\""
-        @i += 1
       end
 
       uri = URI.parse("https://asr.yandex.net/asr_xml?uuid=#{user_id}&key=#{sy_token}&topic=notes&lang=ru-RU")
