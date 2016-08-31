@@ -5,7 +5,7 @@ Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
       when '/start'
-        bot.api.sendMessage(chat_id: message.chat.id, text: "Hi, #{message.from.first_name}")
+        bot.api.sendMessage(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
       end
 
     if message.voice
@@ -29,9 +29,7 @@ Telegram::Bot::Client.run(token) do |bot|
       File.open("#{f_name}.mp3", 'w') do |file|
         file << open(f_url).read
       end
-
       bot.api.sendMessage(chat_id: message.chat.id, text: 'One minute, please')
-
 
       @dir = File.expand_path("../", __FILE__)
 
