@@ -37,7 +37,7 @@ Telegram::Bot::Client.run(token) do |bot|
         mp3 = ogg
         system "ffmpeg -i \"#{ogg}\" -acodec libmp3lame \"#{mp3}\""
       end
-
+#change
       uri = URI.parse("https://asr.yandex.net/asr_xml?uuid=#{user_id}&key=#{sy_token}&topic=notes&lang=ru-RU")
       request = Net::HTTP::Post.new(uri)
       request.content_type = 'audio/x-mpeg-3'
