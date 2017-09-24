@@ -1,5 +1,4 @@
 require 'telegram/bot'
-require 'ruby-ffmpeg'
 
 token = '257482587:AAHkdako3TGWc1--PKt3evunrjZcz3lIBlw'
 Telegram::Bot::Client.run(token) do |bot|
