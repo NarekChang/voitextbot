@@ -35,7 +35,7 @@ Telegram::Bot::Client.run(token) do |bot|
 
       Dir.glob("#{@dir}/*.mp3").each do |ogg|
         mp3 = ogg
-        system "ffmpeg -i \"#{ogg}\" -acodec libmp3lame \"#{mp3}\""
+        system "ffmpeg -y -i \"#{ogg}\" -acodec libmp3lame \"#{mp3}\" "
       end
 #change
       uri = URI.parse("https://asr.yandex.net/asr_xml?uuid=#{user_id}&key=#{sy_token}&topic=notes&lang=ru-RU")
