@@ -1,0 +1,8 @@
+{
+  "name": "Voitext Bot",
+  "description": "Voitext Bot",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/NarekChang/voitextbot",
+  "keywords": ["ruby", "rails" ],
+  "addons": [ "heroku-postgresql" ]
+}
