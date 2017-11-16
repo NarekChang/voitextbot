@@ -1,7 +1,7 @@
 require 'telegram/bot'
 require 'FileUtils'
 
-token = '257482587:AAHkdako3TGWc1--PKt3evunrjZcz3lIBlw'
+token = '#'
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message.text
@@ -17,8 +17,8 @@ Telegram::Bot::Client.run(token) do |bot|
       require 'rubygems'
       require 'open-uri'
 
-      user_id = '01ae13cb744628b58fb536d496daa2e6'
-      sy_token = '66ce8a9b-9bdd-44c7-b461-6f78c1f88eb2'
+      user_id = '#'
+      sy_token = '#'
       chat_id = message.chat.id
       f_name = "file#{chat_id}"
 
