@@ -1,5 +1,4 @@
 require 'telegram/bot'
-require 'FileUtils'
 
 token = '#'
 Telegram::Bot::Client.run(token) do |bot|
@@ -66,12 +65,15 @@ Telegram::Bot::Client.run(token) do |bot|
         end
 
         Dir.glob("#{@dir}/*.mp3").each do |ogg|
-          mp3 = ogg
-          system "rm \"#{mp3}\""
+          system "rm \"#{ogg}\""
         end
       else
         bot.api.sendMessage(chat_id: message.chat.id, text: "Sorry, i don't understand")
       end
+      time = Time.now
+      open('log.txt', 'a') { |f|
+        f.puts (time.inspect + " >> #{chat_id}")
+      }
     end
 
   end
