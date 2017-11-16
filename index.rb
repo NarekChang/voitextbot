@@ -1,4 +1,5 @@
 require 'telegram/bot'
+require 'FileUtils'
 
 token = '257482587:AAHkdako3TGWc1--PKt3evunrjZcz3lIBlw'
 Telegram::Bot::Client.run(token) do |bot|
@@ -35,7 +36,7 @@ Telegram::Bot::Client.run(token) do |bot|
 
       Dir.glob("#{@dir}/*.mp3").each do |ogg|
         mp3 = ogg
-        system "ffmpeg -y -i \"#{ogg}\" -acodec libmp3lame \"#{mp3}\" "
+        system "ffmpeg -y -i \"#{ogg}\" -acodec libmp3lame \"#{mp3}\""
       end
 #change
       uri = URI.parse("https://asr.yandex.net/asr_xml?uuid=#{user_id}&key=#{sy_token}&topic=notes&lang=ru-RU")
@@ -62,6 +63,11 @@ Telegram::Bot::Client.run(token) do |bot|
           bot.api.sendMessage(chat_id: message.chat.id, text: "#{hash['recognitionResults']['variant'][0]}")
         else
           bot.api.sendMessage(chat_id: message.chat.id, text: "#{hash['recognitionResults']['variant']}")
+        end
+
+        Dir.glob("#{@dir}/*.mp3").each do |ogg|
+          mp3 = ogg
+          system "rm \"#{mp3}\""
         end
       else
         bot.api.sendMessage(chat_id: message.chat.id, text: "Sorry, i don't understand")
