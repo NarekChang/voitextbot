@@ -2,6 +2,7 @@
 Bot for Telegram on Ruby.
 
 - [About](#about)
+- [Demo](#demo)
 - [Quick start](#quick-start)
   - [Get Telegram token](#quick-start)
   - [Get Yandex SpeechKit token and user ID](#quick-start)
@@ -12,6 +13,11 @@ About:
 ------
 Voitextbot is a Telegram bot. Voitextbot can convert both sent and forwarded voice messages to text.
 By default bot works with Russian language, but you car easily change this
+
+Demo:
+-----
+Just send voice message
+[@Voitextbot](https://t.me/Voitextbot)
 
 Quick start:
 ------------
