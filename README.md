@@ -16,7 +16,7 @@ By default bot works with Russian language, but you car easily change this
 
 Demo:
 -----
-Just send voice message
+Just send voice message to Telegram Bot:
 [@Voitextbot](https://t.me/Voitextbot)
 
 Quick start:
