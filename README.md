@@ -3,10 +3,10 @@ Bot for Telegram on Ruby.
 
 - [About](#about)
 - [Quick start](#quick-start)
-  - [Get Telegram token](#about)
+  - [Get Telegram token](#quick-start)
   - [Get Yandex SpeechKit token and user ID](#quick-start)
-  - [Select language](#about)
-  - [Start](#about)
+  - [Select language](#quick-start)
+  - [Run bot](#quick-start)
 
 About:
 ------
@@ -38,7 +38,7 @@ Quick start:
   uri = URI.parse("https://asr.yandex.net/asr_xml?uuid=#{user_id}&key=#{sy_token}&topic=notes&lang=langCode-LANGCODE")
   ```
 
-  5. Start
+  5. Run bot
   ```bash
   ruby index.rb
   ```
